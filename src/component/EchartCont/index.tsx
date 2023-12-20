@@ -1,19 +1,27 @@
 import React, { useState, Component } from "react";
 import "./echartcont.css";
-import * as echarts from "echarts/core";
+import * as echarts from "echarts";
+import ReactEcharts from "echarts-for-react";
 
-class EchartCont extends Component {
-  componentDidMount() {
-    console.log(document.getElementById("main"));
-    var myChart = echarts.init(document.getElementById("main"));
-  }
-  render() {
-    return (
-      <div className="wrap">
-        <div id="main">111</div>
-      </div>
-    );
-  }
-}
+import { dataSource } from "./data.js";
+
+const EchartCont = ({ chartType }: { chartType: any }) => {
+  const getOption = () => {
+    let option = {
+      legend: {},
+      tooltip: {},
+      dataset: {
+        // 提供一份数据。
+        source: dataSource,
+      },
+      xAxis: { type: "category" },
+      yAxis: {},
+      series: [{ type: chartType }, { type: chartType }, { type: chartType }],
+    };
+    return option;
+  };
+
+  return <ReactEcharts option={getOption()} />;
+};
 
 export default EchartCont;

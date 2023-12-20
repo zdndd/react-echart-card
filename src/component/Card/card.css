@@ -5,4 +5,8 @@
 
 .title {
   color: #333;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
 }

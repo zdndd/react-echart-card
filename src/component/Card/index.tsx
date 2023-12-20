@@ -48,14 +48,15 @@ const Card = (props: any) => {
     <Col span={props.item.size}>
       <div className="card-wrap" ref={setNodeRef} style={style} {...attributes}>
         <div className="title">
-          <span>
-            {props.item.title}
-            {props.item.id}
-          </span>
-          <Button icon={<SettingOutlined />} onClick={showModal}></Button>
-          <Button {...listeners} icon={<DragOutlined />}></Button>
+          <div>
+            <span>{props.item.title}</span>
+          </div>
+          <div>
+            <Button icon={<SettingOutlined />} onClick={showModal}></Button>
+            <Button {...listeners} icon={<DragOutlined />}></Button>
+          </div>
         </div>
-        <EchartCont></EchartCont>
+        <EchartCont chartType={props.item.chartType}></EchartCont>
         <Modal
           title={props.item.title}
           open={isModalOpen}

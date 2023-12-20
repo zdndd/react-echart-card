@@ -47,7 +47,7 @@ const Portal = () => {
     />
   ));
   return (
-    <Row>
+    <Row gutter={[16, 16]}>
       <DndContext
         sensors={sensors}
         collisionDetection={closestCenter}
