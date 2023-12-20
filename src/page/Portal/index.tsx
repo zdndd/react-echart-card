@@ -1,7 +1,7 @@
-import { useState, useReducer } from "react";
+import { useState } from "react";
 import Card from "../../component/Card";
 import { cardList } from "./data.js";
-import { Col, Row } from "antd";
+import { Row } from "antd";
 import {
   DndContext,
   closestCenter,

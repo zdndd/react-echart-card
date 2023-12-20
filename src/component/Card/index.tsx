@@ -7,12 +7,6 @@ import { CSS } from "@dnd-kit/utilities";
 
 import "./card.css";
 
-type FieldType = {
-  username?: string;
-  password?: string;
-  remember?: string;
-};
-
 const Card = (props: any) => {
   const [form] = Form.useForm();
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -40,6 +34,23 @@ const Card = (props: any) => {
 
   const handleCancel = () => {
     setIsModalOpen(false);
+  };
+
+  const formSize = (size: string | number) => {
+    switch (size) {
+      case 6:
+        return 1;
+        break;
+      case 8:
+        return 2;
+        break;
+      case 12:
+        return 3;
+        break;
+      case 24:
+        return 4;
+        break;
+    }
   };
 
   const { Option } = Select;
@@ -72,7 +83,7 @@ const Card = (props: any) => {
             autoComplete="off"
             initialValues={{
               title: props.item.title,
-              size: props.item.size,
+              size: formSize(props.item.size),
               chartType: props.item.chartType,
             }}
           >

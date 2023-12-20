@@ -1,5 +1,5 @@
 import Portal from "../page/Portal";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
   {

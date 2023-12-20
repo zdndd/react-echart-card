@@ -1,6 +1,5 @@
-import React, { useState, Component } from "react";
+import React from "react";
 import "./echartcont.css";
-import * as echarts from "echarts";
 import ReactEcharts from "echarts-for-react";
 
 import { dataSource } from "./data.js";
